@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To-Do List</title>
+	<link rel="icon" type="image/png" sizes="15x15" href="Picture5.png">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<center>
+		<p id="date1"><span style="float:right">Date: <span id="date"></span></p><br>
+
+		<div class="title"><h1>TO-DO NOTES</h1></div>
+		<p><h2>Instructions:</h2><br>1. Put in your <b>TO-DO TASK</b> in the next field and enter the button.<br>2. Click the task, to mark it as done/complete.<br>3. Click the <b>'X'</b> button to remove it from the list.<br></p>
+
+		<div class="add">
+				<input id="userinput" id="MyInput" placeholder="New task..." maxlength="10000">		
+				<button id="enter">ADD</button>
+		</div>
+
+		<div class="row">
+			<div class="elementList">
+				<ul id="list">
+				</ul>
+			</div>
+		</div>
+	</center>
+
+	<script type="text/javascript">
+		var enterButton = document.getElementById("enter");
+		var input = document.getElementById("userinput");
+		var ul = document.querySelector("ul");
+		var item = document.getElementsByTagName("li");
+		var dt = new Date();
+
+		document.getElementById("date").innerHTML = dt.toLocaleDateString();
+
+		function inputLength() {
+			return input.value.length;
+		}
+
+		function listLength() {
+			return item.length;
+		}
+
+		function createListElement() {
+			var li = document.createElement("li");
+
+			li.appendChild(document.createTextNode(input.value));
+			ul.appendChild(li); 
+			input.value = ""; 
+
+		function crossOut() {
+			li.classList.toggle("done");
+		}
+
+			li.addEventListener("click",crossOut);
+
+		var dBtn = document.createElement("button");
+		dBtn.appendChild(document.createTextNode("Delete"));
+		li.appendChild(dBtn);
+		dBtn.addEventListener("click", deleteListItem);
+
+
+		function deleteListItem(){
+			li.classList.add("delete")
+			}
+		}
+
+
+		function addListAfterClick(){
+			if (inputLength() > 0) {
+				createListElement();
+			}
+		}
+
+		function addListAfterKeypress(event) {
+			if (inputLength() > 0 && event.which ===13) {
+				createListElement();
+			} 
+		}
+
+
+		enterButton.addEventListener("click",addListAfterClick);
+
+		input.addEventListener("keypress", addListAfterKeypress);
+		
+
+	</script>
+
+</body>
+</html>

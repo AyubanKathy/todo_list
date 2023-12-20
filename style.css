@@ -1,0 +1,109 @@
+body {
+	background-image: url(background-color.jpg);
+	background-size: cover;
+	background-position: center;
+	font-family: Harrington;
+	font-size: 18px; 
+	font-weight: bold;
+	color: black;
+}
+
+h2 {
+	color: #E6B9A1;
+}
+
+.title {
+	font-family: Goudy Stout;
+	font-size: 28px;
+	color: #F3D7B2;
+}
+
+#date1 {
+	font-family: Century Gothic;
+	margin: 20px;
+}
+
+#date {
+	font-family: Bookman Old Style;
+	font-size: 25px;
+	color: #70755F;
+}
+
+p {
+	font-size: 20px;
+}
+
+b {
+	color: #EED8A8;
+}
+
+input {
+	font-family: Century Schoolbook;
+	border: 5px solid #FFDFD3;
+	outline-color: #D291BC;
+	min-width: 40%;
+	padding: 9px 18px;
+}
+
+.enter {
+	border: 2px solid black;
+	padding: 6px;
+}
+
+button {
+	border: none;
+	padding: 6px;
+}
+
+button:hover {
+	background: #C9B4A7 !important;
+	color: #FBFFDE;
+}
+
+.elementList {
+	height: 550px;
+}
+
+#list {
+	font-family: MV Boli;
+	color: black;
+}
+
+ul {
+	padding: 10px;
+}
+
+li {
+	list-style: none;
+	padding: 10px;
+	width: 700px;
+	background-color: #EBCEED;
+	margin: 12px 0px;
+	box-shadow: 2px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	transition: .4s;
+}
+
+li:hover {
+	color: #FFCD5D;
+}
+
+li > button {
+	font-weight: normal;
+	background: none;
+	border: none;
+	float: right;
+	color: #025f70;
+	font-weight: 800;
+}
+
+.done {
+	background: #C9B4A7 !important;
+	color: #FBFFDE;
+	text-decoration: line-through;
+}
+
+.delete {
+	display: none;
+}
+
